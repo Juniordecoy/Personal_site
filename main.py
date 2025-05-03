@@ -10,11 +10,11 @@ from wtforms.validators import DataRequired, URL
 import os
 
 app = Flask(__name__)
-# app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY')
 Bootstrap5(app)
 
 my_email = "junior@changingform.com"
-email_pw = "qnrazjcibafzzwgg"
+email_pw = os.environ.get('EMAIL_PW')
+
 
 @app.route("/", methods=["GET","POST"])
 def home():
