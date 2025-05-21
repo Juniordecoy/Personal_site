@@ -3914,3 +3914,68 @@ input, select, textarea {
 			}
 
 		}
+
+        .custom-carousel {
+          position: relative;
+          max-width: 60%;
+          margin: 0 auto;
+          margin-bottom: 1em;       /* Add a controlled gap if you want a little spacing */
+          overflow: hidden;
+          outline: 2px dashed red;  /* Debug only – remove in production */
+        }
+
+        .carousel-track-container {
+          overflow: hidden;
+          position: relative;
+        }
+
+        .carousel-track {
+          display: flex;
+          transition: transform 0.4s ease;
+          padding: 0;
+          margin: 0;
+          list-style: none;
+        }
+
+        .carousel-slide {
+          min-width: 100%;
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+
+        .carousel-slide img {
+          width: 100%;
+          height: auto;
+          display: block;        /* CRITICAL: removes inline whitespace */
+          border-radius: 0.5rem;
+          object-fit: cover;
+          margin: 0;
+          padding: 0;
+        }
+
+        .carousel-btn {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: rgba(0,0,0,0.5);
+          border: none;
+          color: #fff;
+          font-size: 2rem;
+          padding: 0.5rem 1rem;
+          cursor: pointer;
+          z-index: 2;
+          border-radius: 4px;
+        }
+
+        .carousel-btn.prev {
+          left: 10px;
+        }
+
+        .carousel-btn.next {
+          right: 10px;
+        }
+
+        .carousel-btn:hover {
+          background: rgba(0,0,0,0.8);
+        }
