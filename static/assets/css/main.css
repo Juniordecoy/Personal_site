@@ -3919,14 +3919,20 @@ input, select, textarea {
           position: relative;
           max-width: 60%;
           margin: 0 auto;
-          margin-bottom: 1em;       /* Add a controlled gap if you want a little spacing */
+          margin-bottom: 1em;          /* Adjust spacing below carousel */
           overflow: hidden;
-          outline: 2px dashed red;  /* Debug only – remove in production */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
 
         .carousel-track-container {
           overflow: hidden;
           position: relative;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
 
         .carousel-track {
@@ -3939,19 +3945,24 @@ input, select, textarea {
 
         .carousel-slide {
           min-width: 100%;
-          box-sizing: border-box;
-          margin: 0;
+          max-height: 900px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          margin-bottom: 3em;
           padding: 0;
+          box-sizing: border-box;
         }
 
         .carousel-slide img {
           width: 100%;
           height: auto;
-          display: block;        /* CRITICAL: removes inline whitespace */
-          border-radius: 0.5rem;
+          display: block;              /* Eliminate inline image spacing */
           object-fit: cover;
           margin: 0;
           padding: 0;
+          border-radius: 0.5rem;
         }
 
         .carousel-btn {
