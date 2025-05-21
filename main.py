@@ -40,13 +40,17 @@ def home():
 def renders():
     return render_template('3d-rendering.html')
 
+@app.route("/2d-plans")
+def two_d_plans():
+    return render_template('2d-plans.html')
+
+@app.route("/resume")
+def resume():
+    return render_template('resume.html')
+
 @app.route("/under-construction")
 def under_construction():
     return render_template('under_construction.html')
-
-@app.route("/generic")
-def generic():
-    return render_template('generic.html')
 
 @app.route("/elements.html")
 def elements():

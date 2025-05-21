@@ -3919,14 +3919,20 @@ input, select, textarea {
           position: relative;
           max-width: 60%;
           margin: 0 auto;
-          margin-bottom: 1em;       /* Add a controlled gap if you want a little spacing */
+          margin-bottom: 1em;          /* Adjust spacing below carousel */
           overflow: hidden;
-          outline: 2px dashed red;  /* Debug only – remove in production */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
 
         .carousel-track-container {
           overflow: hidden;
           position: relative;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
 
         .carousel-track {
@@ -3939,19 +3945,24 @@ input, select, textarea {
 
         .carousel-slide {
           min-width: 100%;
-          box-sizing: border-box;
-          margin: 0;
+          max-height: 900px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          margin-bottom: 3em;
           padding: 0;
+          box-sizing: border-box;
         }
 
         .carousel-slide img {
           width: 100%;
           height: auto;
-          display: block;        /* CRITICAL: removes inline whitespace */
-          border-radius: 0.5rem;
+          display: block;              /* Eliminate inline image spacing */
           object-fit: cover;
           margin: 0;
           padding: 0;
+          border-radius: 0.5rem;
         }
 
         .carousel-btn {
@@ -3978,4 +3989,39 @@ input, select, textarea {
 
         .carousel-btn:hover {
           background: rgba(0,0,0,0.8);
+        }
+
+        .sub-header {
+            font-size: 1.5rem
+        }
+
+        .resume-container {
+          max-width: 700px;
+          margin: 0 auto;
+          background-color: #136f63;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .resume-image {
+          max-width: 100%;
+          height: auto;
+          border-radius: 5px;
+          margin-bottom: 20px;
+        }
+
+        .download-button {
+          display: inline-block;
+          padding: 12px 24px;
+          background-color: #007BFF;
+          color: white;
+          text-decoration: none;
+          font-size: 16px;
+          border-radius: 6px;
+          transition: background-color 0.3s ease;
+        }
+
+        .download-button:hover {
+          background-color: #0056b3;
         }

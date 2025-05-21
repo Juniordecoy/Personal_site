@@ -10,7 +10,6 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../static/assets/css/main.css" />
-<!--		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">-->
 		<noscript><link rel="stylesheet" href="../static/assets/css/noscript.css" /></noscript>
 
 	</head>
@@ -19,11 +18,13 @@
 		<!-- Header -->
 			<header id="header">
 				<a href="/" class="title">Changing Form</a>
-				<nav>
+				<nav class="sub-header">
 					<ul>
-						<li><a href="/">Home</a></li>
-						<li><a href="{{url_for('renders')}}" class="active">3D Renderings</a></li>
-						<!-- <li><a href="{{url_for('elements')}}">Elements</a></li> -->
+						<li><a href="/" class="active">Home</a></li>
+						<li><a href="{{url_for('renders')}}">3D Renderings</a></li>
+						<li><a href="{{url_for('two_d_plans')}}" class="active">2D Plans</a></li>
+						<li><a href="{{url_for('resume')}}" class="active">Resume</a></li>
+						<li><a href="http://github.com/Juniordecoy" class="active">GitHub</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -40,8 +41,44 @@
 							<p>With a focus on clarity and realism, each rendering is carefully crafted to match your vision. You send over the materials, and I’ll take care of translating them into high-quality 3D imagery that’s easy to share, present, or build from—no guesswork required.</p>
 							<p>Here is some of my past work below</p>
 						</div>
+
+						    <div class="custom-carousel">
+							  <h2>Basement Remodel - 5/20/25</h2>
+							  <button class="carousel-btn prev">&#10094;</button>
+							  <div class="carousel-track-container">
+								<ul class="carousel-track">
+								  <li class="carousel-slide"><img src="../static/images/basement_remodel_02/basement_top-down_01.png" alt="Slide 1"></li>
+								  <li class="carousel-slide"><img src="../static/images/basement_remodel_02/livingroom_05.png" alt="Slide 2"></li>
+								  <li class="carousel-slide"><img src="../static/images/basement_remodel_02/livingroom_06.png" alt="Slide 3"></li>
+								  <li class="carousel-slide"><img src="../static/images/basement_remodel_02/bar_area_02.png" alt="Slide 4"></li>
+								  <li class="carousel-slide"><img src="../static/images/basement_remodel_02/livingroom_03.png" alt="Slide 5"></li>
+								  <li class="carousel-slide"><img src="../static/images/basement_remodel_02/bathroom_01.png" alt="Slide 6"></li>
+								  <li class="carousel-slide"><img src="../static/images/basement_remodel_02/basement_measurements_05.png" alt="Slide 7"></li>
+								</ul>
+							  </div>
+							  <button class="carousel-btn next">&#10095;</button>
+							</div>
+
+						    <div class="custom-carousel">
+							  <h2>Basement Remodel - 5/15/25</h2>
+							  <button class="carousel-btn prev">&#10094;</button>
+							  <div class="carousel-track-container">
+								<ul class="carousel-track">
+								  <li class="carousel-slide"><img src="../static/images/basement_remodel/basement_top-down_01.png" alt="Slide 1"></li>
+								  <li class="carousel-slide"><img src="../static/images/basement_remodel/livingroom_top-down.png" alt="Slide 2"></li>
+								  <li class="carousel-slide"><img src="../static/images/basement_remodel/livingroom_01.png" alt="Slide 3"></li>
+								  <li class="carousel-slide"><img src="../static/images/basement_remodel/hallway_03.png" alt="Slide 4"></li>
+								  <li class="carousel-slide"><img src="../static/images/basement_remodel/bedroom_01.png" alt="Slide 5"></li>
+								  <li class="carousel-slide"><img src="../static/images/basement_remodel/storage_02.png" alt="Slide 6"></li>
+								  <li class="carousel-slide"><img src="../static/images/basement_remodel/bathroom_top-down.png" alt="Slide 7"></li>
+								  <li class="carousel-slide"><img src="../static/images/basement_remodel/basement_measurments_v03.png" alt="Slide 8"></li>
+								</ul>
+							  </div>
+							  <button class="carousel-btn next">&#10095;</button>
+							</div>
+
 							<div class="custom-carousel">
-							  <h2>Bathroom Remodel</h2>
+							  <h2>Bathroom Remodel - 4/17/25</h2>
 							  <button class="carousel-btn prev">&#10094;</button>
 							  <div class="carousel-track-container">
 								<ul class="carousel-track">
@@ -58,7 +95,7 @@
 							</div>
 
 							<div class="custom-carousel">
-							  <h2>Deck & Cement Upgrade</h2>
+							  <h2>Deck & Cement Upgrade - 5/1/25</h2>
 							  <button class="carousel-btn prev">&#10094;</button>
 							  <div class="carousel-track-container">
 								<ul class="carousel-track">
