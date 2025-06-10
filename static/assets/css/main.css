@@ -3969,12 +3969,14 @@ input, select, textarea {
         /* Make images taller on small screens */
         @media screen and (max-width: 768px) {
             .carousel-slide img {
-                max-height: 80vh;
+                max-height: 85vh !important;
             }
 
             .carousel-btn {
-                font-size: 1.5em;
-                padding: 0.3em 0.6em;
+                font-size: 1.2em !important;
+                padding: 0.2em 0.5em !important;
+                width: auto !important;
+                height: auto !important;
             }
         }
 
