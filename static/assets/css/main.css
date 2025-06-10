@@ -3958,11 +3958,24 @@ input, select, textarea {
         .carousel-slide img {
           width: 100%;
           height: auto;
+          max-height: 500px;
           display: block;              /* Eliminate inline image spacing */
-          object-fit: cover;
+          object-fit: contain;
           margin: 0;
           padding: 0;
           border-radius: 0.5rem;
+        }
+
+        /* Make images taller on small screens */
+        @media screen and (max-width: 768px) {
+            .carousel-slide img {
+                max-height: 80vh;
+            }
+
+            .carousel-btn {
+                font-size: 1.5em;
+                padding: 0.3em 0.6em;
+            }
         }
 
         .carousel-btn {
