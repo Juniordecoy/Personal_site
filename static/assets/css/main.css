@@ -4053,6 +4053,36 @@ input, select, textarea {
                 top: 5px;
                 right: 10px;
             }
+
+            #header {                       /* stack title + nav vertically   */
+                flex-direction: column;
+                align-items: flex-start;
+                padding: .75em 1.25em;     /* tighter padding                 */
+            }
+
+            #header .title {
+                font-size: 1.35em;         /* stays readable                  */
+                margin-bottom: .4em;
+            }
+
+            /* nav sits full‑width under the title, wraps if needed */
+            #header > nav { width: 100%; }
+
+            #header > nav > ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: .8em 1.2em;           /* row and column spacing          */
+                margin: 0;
+            }
+
+            /* trim the links themselves */
+            #header > nav > ul > li { margin: 0; }
+            #header > nav > ul > li a {
+                font-size: .75em;
+                height: auto !important;   /* kill the hard‑coded 6em height  */
+                line-height: 1.6;
+                padding: .2em 0;
+            }
         }
 
         .carousel-btn {
