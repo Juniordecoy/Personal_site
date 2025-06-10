@@ -4078,9 +4078,9 @@ input, select, textarea {
             /* trim the links themselves */
             #header > nav > ul > li { margin: 0; }
             #header > nav > ul > li a {
-                font-size: .5em;
+                font-size: .6em;
                 height: auto !important;   /* kill the hard‑coded 6em height  */
-                line-height: 1.6;
+                line-height: 1;
                 padding: 0 0;
             }
         }
