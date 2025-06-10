@@ -3975,9 +3975,11 @@ input, select, textarea {
           height: 240px;
           font-size: 1.2em;
           padding: 0;
-          background: rgba(0, 0, 0, 0.5);
+          background: none !important;
           color: white;
-          border: none;
+          border: none !important;
+          outline: none !important;
+          box-shadow: none !important;
           cursor: pointer;
 
           display: flex;
@@ -3987,23 +3989,19 @@ input, select, textarea {
           border-radius: 50%;
         }
         #close-fullscreen {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 80px;
-          height: 240px;
-          font-size: 1.2em;
-          padding: 0;
-          background: rgba(0, 0, 0, 0.5);
-          color: white;
-          border: none;
-          cursor: pointer;
+            top: 30px;        /* push it down from the very top */
+            right: 20px;      /* keep same horizontal offset */
+            padding: .25em;
+            width: 80px;
+            height: 80px;
+            background: none !important;
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
 
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* Make images taller on small screens */
@@ -4035,9 +4033,11 @@ input, select, textarea {
             }
 
             #close-fullscreen {
+                top: 5px;
+                right: 10px;
                 font-size: 1.2em;
-                width: 30px;
-                height: 30px;
+                width: 100px;
+                height: 100px;
                 padding: 0.3em;
             }
 
