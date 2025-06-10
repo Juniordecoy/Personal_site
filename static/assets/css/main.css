@@ -3966,6 +3966,13 @@ input, select, textarea {
           border-radius: 0.5rem;
         }
 
+        #fullscreen-prev,
+        #fullscreen-next,
+        #close-fullscreen {
+          font-size: 2em;
+          padding: 0.5em;
+        }
+
         /* Make images taller on small screens */
         @media screen and (max-width: 768px) {
             .carousel-slide img {
@@ -3985,6 +3992,26 @@ input, select, textarea {
 
             .carousel-btn.next {
                 right: 5px;
+            }
+
+            #fullscreen-prev,
+            #fullscreen-next,
+            #close-fullscreen {
+                font-size: 1.2em;
+                padding: 0.3em;
+            }
+
+            #fullscreen-prev {
+                left: 10px;
+            }
+
+            #fullscreen-next {
+                right: 10px;
+            }
+
+            #close-fullscreen {
+                top: 5px;
+                right: 10px;
             }
         }
 
