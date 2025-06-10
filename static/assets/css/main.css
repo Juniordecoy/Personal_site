@@ -3972,7 +3972,7 @@ input, select, textarea {
           top: 50%;
           transform: translateY(-50%);
           width: 40px;
-          height: 40px;
+          height: 80px;
           font-size: 1.2em;
           padding: 0;
           background: rgba(0, 0, 0, 0.5);
@@ -3987,8 +3987,23 @@ input, select, textarea {
           border-radius: 50%;
         }
         #close-fullscreen {
-          font-size: 2em;
-          padding: 0.5em;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 50px;
+          height: 80px;
+          font-size: 1.2em;
+          padding: 0;
+          background: rgba(0, 0, 0, 0.5);
+          color: white;
+          border: none;
+          cursor: pointer;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          border-radius: 50%;
         }
 
         /* Make images taller on small screens */
