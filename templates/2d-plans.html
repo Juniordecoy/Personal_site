@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Changing Form - 2D Plan Examples</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../static/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../static/assets/css/noscript.css" /></noscript>
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="/" class="title">Changing Form</a>
+				<nav class="sub-header">
+					<ul>
+						<li><a href="/" class="active">Home</a></li>
+						<li><a href="{{url_for('renders')}}" class="active">3D Renderings</a></li>
+						<li><a href="{{url_for('two_d_plans')}}">2D Plans</a></li>
+						<li><a href="{{url_for('resume')}}" class="active">Resume</a></li>
+						<li><a href="http://github.com/Juniordecoy" class="active">GitHub</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">2D Plans</h1>
+							<span class="image fit"><img src="../static/images/2d_plans/v026.png" alt="" /></span>
+							<p>At Changing Form, I specialize in transforming your hand-drawn sketches, measurements, and
+								photos into clean, professional 2D floor plans. Whether you're planning a renovation, arranging
+								furniture, or preparing a real estate listing, these accurate digital layouts provide a clear
+								and detailed representation of your space. Each plan is crafted to reflect your vision, ensuring
+								functionality and clarity for your project needs.</p>
+						</div>
+
+						    <div class="custom-carousel">
+							  <h2>Examples</h2>
+							  <button class="carousel-btn prev">&#10094;</button>
+							  <div class="carousel-track-container">
+								<ul class="carousel-track">
+								  <li class="carousel-slide"><img src="../static/images/2d_plans/basement_measurements_05.png" alt="Slide 1"></li>
+								  <li class="carousel-slide"><img src="../static/images/2d_plans/basement_measurments_v03.png" alt="Slide 2"></li>
+								  <li class="carousel-slide"><img src="../static/images/2d_plans/First_Floor_02.jpg" alt="Slide 3"></li>
+								  <li class="carousel-slide"><img src="../static/images/2d_plans/Floor_Plan_01.png" alt="Slide 4"></li>
+								  <li class="carousel-slide"><img src="../static/images/2d_plans/in-ground_post_measurement2.png" alt="Slide 5"></li>
+								</ul>
+							  </div>
+							  <button class="carousel-btn next">&#10095;</button>
+							</div>
+
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Changing Form.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a> & E. Junior Rodriguez</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+
+			<script>
+			  document.querySelectorAll('.custom-carousel').forEach(carousel => {
+				const track = carousel.querySelector('.carousel-track');
+				const slides = Array.from(track.children);
+				const nextButton = carousel.querySelector('.carousel-btn.next');
+				const prevButton = carousel.querySelector('.carousel-btn.prev');
+				let currentSlide = 0;
+
+				function updateSlide(position) {
+				  track.style.transform = `translateX(-${position * 100}%)`;
+				}
+
+				nextButton.addEventListener('click', () => {
+				  currentSlide = (currentSlide + 1) % slides.length;
+				  updateSlide(currentSlide);
+				});
+
+				prevButton.addEventListener('click', () => {
+				  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+				  updateSlide(currentSlide);
+				});
+			  });
+			</script>
+
+			<script src="../static/assets/js/jquery.min.js"></script>
+			<script src="../static/assets/js/jquery.scrollex.min.js"></script>
+			<script src="../static/assets/js/jquery.scrolly.min.js"></script>
+			<script src="../static/assets/js/browser.min.js"></script>
+			<script src="../static/assets/js/breakpoints.min.js"></script>
+			<script src="../static/assets/js/util.js"></script>
+			<script src="../static/assets/js/main.js"></script>
+
+	</body>
+</html>
