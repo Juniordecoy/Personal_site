@@ -4003,15 +4003,21 @@ input, select, textarea {
 
             #fullscreen-prev {
                 left: 10px;
+                width: auto;
+                height: 2em;
             }
 
             #fullscreen-next {
                 right: 10px;
+                width: auto;
+                height: 2em;
             }
 
             #close-fullscreen {
                 top: 5px;
                 right: 10px;
+                width: auto;
+                height: 2em;
             }
         }
 
