@@ -3967,7 +3967,25 @@ input, select, textarea {
         }
 
         #fullscreen-prev,
-        #fullscreen-next,
+        #fullscreen-next {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 40px;
+          height: 40px;
+          font-size: 1.2em;
+          padding: 0;
+          background: rgba(0, 0, 0, 0.5);
+          color: white;
+          border: none;
+          cursor: pointer;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          border-radius: 50%;
+        }
         #close-fullscreen {
           font-size: 2em;
           padding: 0.5em;
@@ -3983,7 +4001,7 @@ input, select, textarea {
                 font-size: 1.2em !important;
                 padding: 0.2em 0.2em !important;
                 width: auto !important;
-                height: 2em !important;
+                height: auto !important;
             }
 
             .carousel-btn.prev {
@@ -3995,7 +4013,12 @@ input, select, textarea {
             }
 
             #fullscreen-prev,
-            #fullscreen-next,
+            #fullscreen-next {
+                width: 30px;
+                height: 30px;
+                font-size: 1em;
+            }
+
             #close-fullscreen {
                 font-size: 1.2em;
                 padding: 0.3em;
@@ -4003,21 +4026,15 @@ input, select, textarea {
 
             #fullscreen-prev {
                 left: 10px;
-                width: auto;
-                height: 2em;
             }
 
             #fullscreen-next {
                 right: 10px;
-                width: auto;
-                height: 2em;
             }
 
             #close-fullscreen {
                 top: 5px;
                 right: 10px;
-                width: auto;
-                height: 2em;
             }
         }
 
