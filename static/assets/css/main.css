@@ -3983,7 +3983,7 @@ input, select, textarea {
                 font-size: 1.2em !important;
                 padding: 0.2em 0.2em !important;
                 width: auto !important;
-                height: auto !important;
+                height: 2em !important;
             }
 
             .carousel-btn.prev {
