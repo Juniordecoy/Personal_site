@@ -4071,14 +4071,14 @@ input, select, textarea {
             #header > nav > ul {
                 display: flex;
                 flex-wrap: wrap;
-                gap: .6em .8em;           /* row and column spacing          */
+                gap: .6em .6em;           /* row and column spacing          */
                 margin: 0;
             }
 
             /* trim the links themselves */
             #header > nav > ul > li { margin: 0; }
             #header > nav > ul > li a {
-                font-size: .6em;
+                font-size: .5em;
                 height: auto !important;   /* kill the hard‑coded 6em height  */
                 line-height: 1;
                 padding: 0 0;
