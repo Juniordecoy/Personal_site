@@ -3974,9 +3974,17 @@ input, select, textarea {
 
             .carousel-btn {
                 font-size: 1.2em !important;
-                padding: 0.2em 0.5em !important;
+                padding: 0.2em 0.2em !important;
                 width: auto !important;
                 height: auto !important;
+            }
+
+            .carousel-btn.prev {
+                left: 5px;
+            }
+
+            .carousel-btn.next {
+                right: 5px;
             }
         }
 
@@ -3990,7 +3998,7 @@ input, select, textarea {
           font-size: 2rem;
           padding: 0.5rem 1rem;
           cursor: pointer;
-          z-index: 2;
+          z-index: 1;
           border-radius: 4px;
         }
 
