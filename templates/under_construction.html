@@ -42,10 +42,48 @@
 								reach out if you have a project in mind or check out my GitHub for latest projects — I’d
 								love to hear from you.
 							</p>
+							<p>
+								Below is a slide show of some of the 3D projects i did while back
+								at school.
+							</p>
 						</div>
 					</section>
+					<div class="custom-carousel">
+						<h2>3D Animation projects - 14'-15'</h2>
+						<button class="carousel-btn prev">&#10094;</button>
+						<div class="carousel-track-container">
+							<ul class="carousel-track">
+								<li class="carousel-slide"><img src="../static/images/old_school_projects/Glass_Train_01.jpg" alt="Slide 1"></li>
+								<li class="carousel-slide"><img src="../static/images/old_school_projects/Glass_Train_02.jpg" alt="Slide 2"></li>
+								<li class="carousel-slide"><img src="../static/images/old_school_projects/Glass_Train_03.jpg" alt="Slide 3"></li>
+								<li class="carousel-slide"><img src="../static/images/old_school_projects/Pistol_01.jpg" alt="Slide 4"></li>
+								<li class="carousel-slide"><img src="../static/images/old_school_projects/Pistol_02.jpg" alt="Slide 5"></li>
+								<li class="carousel-slide"><img src="../static/images/old_school_projects/Pistol_03.jpg" alt="Slide 6"></li>
+								<li class="carousel-slide"><img src="../static/images/old_school_projects/Pistol_04.jpg" alt="Slide 7"></li>
+								<li class="carousel-slide"><img src="../static/images/old_school_projects/Pistol_05.jpg" alt="Slide 8"></li>
+								<li class="carousel-slide"><img src="../static/images/old_school_projects/Pistol_01_no-tex.jpg" alt="Slide 9"></li>
+								<li class="carousel-slide"><img src="../static/images/old_school_projects/Office_01.jpg" alt="Slide 10"></li>
+								<li class="carousel-slide"><img src="../static/images/old_school_projects/Office_01_no-tex.jpg" alt="Slide 11"></li>
+								<li class="carousel-slide"><img src="../static/images/old_school_projects/Mecha_Concept_01.jpg" alt="Slide 12"></li>
+								<li class="carousel-slide"><img src="../static/images/old_school_projects/Mecha_Concept_02.jpg" alt="Slide 13"></li>
+								<li class="carousel-slide"><img src="../static/images/old_school_projects/Mecha_Concept_03.jpg" alt="Slide 14"></li>
+								<li class="carousel-slide"><img src="../static/images/old_school_projects/Mecha_Concept_04.jpg" alt="Slide 15"></li>
+								<li class="carousel-slide"><img src="../static/images/old_school_projects/Mecha_Concept_05.jpg" alt="Slide 16"></li>
+								<li class="carousel-slide"><img src="../static/images/old_school_projects/Mecha_Concept_06.jpg" alt="Slide 17"></li>
+							</ul>
+						</div>
+						<button class="carousel-btn next">&#10095;</button>
+					</div>
 
 			</div>
+
+			<div id="fullscreen-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:black; justify-content:center; align-items:center; z-index:10000;">
+			  <button id="close-fullscreen" style="position:absolute; top:10px; right:20px; font-size:2em; background:none; border:none; color:white;">&times;</button>
+			  <img id="fullscreen-image" src="" style="max-width:90vw; max-height:90vh;" />
+			  <button id="fullscreen-prev" style="position:absolute; left:20px; font-size:2em; background:none; border:none; color:white;">&#10094;</button>
+			  <button id="fullscreen-next" style="position:absolute; right:20px; font-size:2em; background:none; border:none; color:white;">&#10095;</button>
+			</div>
+
 
 		<!-- Footer -->
 			<footer id="footer" class="wrapper alt">
@@ -57,6 +95,69 @@
 			</footer>
 
 		<!-- Scripts -->
+			<script>
+			  document.querySelectorAll('.custom-carousel').forEach(carousel => {
+				const track = carousel.querySelector('.carousel-track');
+				const slides = Array.from(track.children);
+				const nextButton = carousel.querySelector('.carousel-btn.next');
+				const prevButton = carousel.querySelector('.carousel-btn.prev');
+				let currentSlide = 0;
+
+				function updateSlide(position) {
+				  track.style.transform = `translateX(-${position * 100}%)`;
+				}
+
+				nextButton.addEventListener('click', () => {
+				  currentSlide = (currentSlide + 1) % slides.length;
+				  updateSlide(currentSlide);
+				});
+
+				prevButton.addEventListener('click', () => {
+				  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+				  updateSlide(currentSlide);
+				});
+			  });
+			</script>
+			<script>
+			  document.addEventListener("DOMContentLoaded", function () {
+				const modal = document.getElementById("fullscreen-modal");
+				const modalImg = document.getElementById("fullscreen-image");
+				const closeBtn = document.getElementById("close-fullscreen");
+				const nextBtn = document.getElementById("fullscreen-next");
+				const prevBtn = document.getElementById("fullscreen-prev");
+
+				let currentImages = [];
+				let currentIndex = 0;
+
+				// Show modal on image click
+				document.querySelectorAll('.carousel-slide img').forEach(img => {
+				  img.addEventListener('click', function () {
+					const track = img.closest('.carousel-track');
+					currentImages = Array.from(track.querySelectorAll('img')).map(img => img.src);
+					currentIndex = currentImages.indexOf(img.src);
+					modalImg.src = img.src;
+					modal.style.display = "flex";
+				  });
+				});
+
+				closeBtn.addEventListener('click', () => modal.style.display = "none");
+
+				nextBtn.addEventListener('click', () => {
+				  currentIndex = (currentIndex + 1) % currentImages.length;
+				  modalImg.src = currentImages[currentIndex];
+				});
+
+				prevBtn.addEventListener('click', () => {
+				  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+				  modalImg.src = currentImages[currentIndex];
+				});
+
+				// Close on outside click
+				modal.addEventListener('click', (e) => {
+				  if (e.target === modal) modal.style.display = "none";
+				});
+			  });
+			</script>
 			<script src="../static/assets/js/jquery.min.js"></script>
 			<script src="../static/assets/js/jquery.scrollex.min.js"></script>
 			<script src="../static/assets/js/jquery.scrolly.min.js"></script>
