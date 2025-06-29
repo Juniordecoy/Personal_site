@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Changing Form - Data Insights Dashboard</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../static/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../static/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Changing Form</a>
+				<nav>
+					<ul>
+						<li><a href="/" class="active">Home</a></li>
+						<li><a href="{{url_for('renders')}}" class="active">3D Renderings</a></li>
+						<li><a href="{{url_for('two_d_plans')}}" class="active">2D Plans</a></li>
+						<li><a href="{{url_for('project_list')}}" class="active">Coding Projects</a></li>
+						<li><a href="{{url_for('resume')}}" class="active">Resume</a></li>
+						<li><a href="http://github.com/Juniordecoy" class="active">GitHub</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+					  <div class="inner">
+						<h1 class="major">📊 Data Insights Dashboard</h1>
+						<form action="/data-dashboard" method="POST" enctype="multipart/form-data"
+							  style="display:flex; justify-content:center; align-items:center; gap:1.5rem; margin-top:2em;">
+						  <input type="file" name="file" required>
+						  <button type="submit" class="button primary">Upload CSV</button>
+						</form>
+
+						{% if filename %}
+						  <div style="text-align:center; margin-top: 2rem;">
+							<h2>File being read is {{ filename }}</h2>
+						  </div>
+						{% endif %}
+						{% if issues %}
+						  <div style="text-align:center; margin-top:2rem;">
+							<h2>🧹 Data Cleaning Overview</h2>
+							<ul style="list-style:none; padding:0;">
+							  <li><strong>Total Rows:</strong> {{ issues["Total Rows"] }}</li>
+							  <li><strong>Total Columns:</strong> {{ issues["Total Columns"] }}</li>
+							  <li><strong>Missing Values:</strong> {{ issues["Total Missing Values"] }}</li>
+							  <li><strong>Duplicate Rows:</strong> {{ issues["Duplicate Rows"] }}</li>
+							  <li><strong>Rows with All Nulls:</strong> {{ issues["Rows with All Nulls"] }}</li>
+							</ul>
+						  </div>
+						{% endif %}
+						{% if stats_table %}
+						  <h2>Summary Stats:</h2>
+						  <div class="table-wrapper">
+							{{ stats_table | safe }}
+						  </div>
+						{% endif %}
+						{% if graph_url %}
+						  <div style="text-align:center; margin-top:2rem;">
+						    <img src="{{ graph_url }}" style="max-width: 100%; height: auto;">
+						  </div>
+						{% endif %}
+						{% if schema_table %}
+						  <h2 style="margin-top: 3rem;">📋 Data Schema</h2>
+						  <div class="table-wrapper">
+							{{ schema_table | safe }}
+						  </div>
+						{% endif %}
+						{% if issues or stats_table or filename %}
+						  <div style="text-align:center; margin-top:2rem;">
+							<a href="{{ url_for('download_graph_data') }}" class="button primary">Download Data Insights</a>
+						  </div>
+						{% endif %}
+					  </div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Changing Form.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a> & E. Junior Rodriguez</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="../static/assets/js/jquery.min.js"></script>
+			<script src="../static/assets/js/jquery.scrollex.min.js"></script>
+			<script src="../static/assets/js/jquery.scrolly.min.js"></script>
+			<script src="../static/assets/js/browser.min.js"></script>
+			<script src="../static/assets/js/breakpoints.min.js"></script>
+			<script src="../static/assets/js/util.js"></script>
+			<script src="../static/assets/js/main.js"></script>
+
+	</body>
+</html>
