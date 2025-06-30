@@ -4,7 +4,9 @@ import smtplib
 import datetime as dt
 import pandas as pd
 import os
-from io import BytesIO
+import io
+
+import csv
 
 import matplotlib
 matplotlib.use('Agg')  # This disables GUI usage (important for Flask)
@@ -14,14 +16,13 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectField
 from wtforms.validators import DataRequired, URL
 
-import os
-
 app = Flask(__name__)
 Bootstrap5(app)
 
 my_email = "junior@changingform.com"
 email_pw = os.environ.get('EMAIL_PW')
 
+task_log = []
 
 @app.route("/", methods=["GET","POST"])
 def home():
@@ -108,6 +109,43 @@ def download_graph_data():
     response = send_file(path, as_attachment=True)
     # os.remove(path)  # Uncomment to delete after download
     return response
+
+@app.route("/time-tracker", methods=["GET", "POST"])
+def time_tracker():
+    if request.method == "POST":
+        task = request.form.get("task").capitalize()
+        duration = request.form.get("duration")
+
+        if task and duration:
+            task_log.append({
+                "task": task,
+                "duration": int(duration)
+            })
+    total_time = sum(item["duration"] for item in task_log)
+
+    return render_template("time_tracker.html", task_log=task_log, total_time=total_time)
+
+@app.route("/download-tasks")
+def download_tasks():
+    # Step 1: Write to a text buffer
+    csv_text = io.StringIO()
+    writer = csv.writer(csv_text)
+    writer.writerow(["Task", "Duration (minutes)"])
+    for item in task_log:
+        writer.writerow([item["task"], item["duration"]])
+
+    # Step 2: Convert the text to bytes
+    mem = io.BytesIO()
+    mem.write(csv_text.getvalue().encode('utf-8'))
+    mem.seek(0)
+
+    # Step 3: Return as downloadable file
+    return send_file(
+        mem,
+        mimetype="text/csv",
+        as_attachment=True,
+        download_name="task_log.csv"
+    )
 
 @app.route("/resume")
 def resume():
