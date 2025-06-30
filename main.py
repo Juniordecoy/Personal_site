@@ -147,6 +147,11 @@ def download_tasks():
         download_name="task_log.csv"
     )
 
+@app.route("/reset-tasks", methods=["POST"])
+def reset_tasks():
+    task_log.clear()
+    return redirect(url_for('time_tracker'))
+
 @app.route("/resume")
 def resume():
     return render_template('resume.html')

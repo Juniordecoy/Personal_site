@@ -69,6 +69,9 @@
 									<div style="text-align: center; margin-top: 2rem;">
 										<a href="{{ url_for('download_tasks') }}" class="button primary">Download CSV</a>
 									</div>
+									<form action="{{ url_for('reset_tasks') }}" method="POST" style="text-align: center; margin-top: 1rem;">
+										<button type="submit" class="button">Reset Tasks</button>
+									</form>
 								{% endif %}
 							</main>
 						</div>
