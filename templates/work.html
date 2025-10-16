@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Our Work — Changing Form{% endblock %}
+{% block meta_desc %}See examples of Changing Form’s 3D renderings, photography, and video work for real clients.{% endblock %}
+
+{% block content %}
+<section class="wrap">
+  <h1>Our Work</h1>
+  <p>A glimpse at recent 3D renders, photography, and video projects from around Central PA.</p>
+
+  <div class="gallery-item">
+  <a href="/static/images/Backside_view_v1.webp" data-lightbox data-alt="Home Renovation — 3D Renders">
+    <picture>
+      <source srcset="/static/images/Backside_view_v1.webp" type="image/webp">
+      <img class="fade-in"
+           src="/static/images/Backside_view_v1.webp"
+           alt="Home Renovation — 3D Renders"
+           width="1200" height="800"
+           loading="lazy" />
+    </picture>
+  </a>
+  <p>Home Renovation — 3D Renders</p>
+  </div>
+  <div class="gallery-item">
+  <a href="/static/images/dji_fly_20230914.webp" data-lightbox data-alt="Exterior Drone Shot">
+    <picture>
+      <source srcset="/static/images/dji_fly_20230914.webp" type="image/webp">
+      <img class="fade-in"
+           src="/static/images/dji_fly_20230914.webp"
+           alt="Exterior Drone Shot"
+           width="1200" height="800"
+           loading="lazy" />
+    </picture>
+  </a>
+  <p>Exterior Drone Shot</p>
+  </div>
+  <div class="gallery-item">
+  <a href="/static/images/kitchen_012-measurements.webp" data-lightbox data-alt="2D Floor Plan Visualization">
+    <picture>
+      <source srcset="/static/images/kitchen_012-measurements.webp" type="image/webp">
+      <img class="fade-in"
+           src="/static/images/kitchen_012-measurements.webp"
+           alt="2D Floor Plan Visualization"
+           width="1200" height="800"
+           loading="lazy" />
+    </picture>
+  </a>
+  <p>2D Floor Plan Visualization</p>
+  </div>
+
+</section>
+{% endblock %}
