@@ -7,3 +7,4 @@ gunicorn==21.2.0
 pandas==2.2.0
 matplotlib==3.5.0
 python-dotenv
+email_validator
