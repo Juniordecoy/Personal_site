@@ -1,5 +1,10 @@
 from flask import Flask, render_template, redirect, url_for, request, send_file
 from flask_bootstrap import Bootstrap5
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField, SelectField
+from wtforms.validators import DataRequired, URL
+
+import sqlite3
 import smtplib
 import datetime as dt
 import pandas as pd
@@ -12,10 +17,6 @@ import matplotlib
 matplotlib.use('Agg')  # This disables GUI usage (important for Flask)
 import matplotlib.pyplot as plt
 
-from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, SelectField
-from wtforms.validators import DataRequired, URL
-
 app = Flask(__name__)
 Bootstrap5(app)
 
@@ -23,6 +24,20 @@ my_email = "junior@changingform.com"
 email_pw = os.environ.get('EMAIL_PW')
 
 task_log = []
+
+def init_guestbook():
+    conn = sqlite3.connect("guestbook.db")
+    cursor = conn.cursor()
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS entries (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            message TEXT NOT NULL,
+            timestamp TEXT NOT NULL
+        )
+    ''')
+    conn.commit()
+    conn.close()
 
 @app.route("/", methods=["GET","POST"])
 def home():
@@ -55,6 +70,100 @@ def two_d_plans():
 @app.route("/project-list")
 def project_list():
     return render_template('project_list.html')
+
+@app.route("/weather-log", methods=["GET", "POST"])
+def weather_log():
+    weather_data = None
+
+    if request.method == "POST":
+        city = request.form.get("city").strip().title()
+        # API call & database logic will go here later
+        weather_data = {"city": city}  # just placeholder for now
+
+    return render_template("weather_log.html", weather_data=weather_data)
+
+@app.route("/guestbook", methods=["GET", "POST"])
+def guestbook():
+    if request.method == "POST":
+        name = request.form.get("name").strip()
+        message = request.form.get("message").strip()
+        timestamp = dt.datetime.now().strftime("%Y-%m-%d %H:%M")
+
+        conn = sqlite3.connect("guestbook.db")
+        cursor = conn.cursor()
+        cursor.execute("INSERT INTO entries (name, message, timestamp) VALUES (?, ?, ?)",
+                       (name, message, timestamp))
+        conn.commit()
+        conn.close()
+        return redirect(url_for("guestbook"))  # Refresh to avoid duplicate posts
+
+    # Check if there is a filter
+    search_query = request.args.get("search", "").strip()
+    sort_by = request.args.get("sort", "newest")  # default is newest
+
+    base_query = "SELECT id, name, message, timestamp FROM entries"
+    params = []
+
+    if search_query:
+        base_query += " WHERE name LIKE ?"
+        params.append(f"%{search_query}%")
+
+    # Sorting logic
+    if sort_by == "oldest":
+        base_query += " ORDER BY id ASC"
+    elif sort_by == "a-z":
+        base_query += " ORDER BY name ASC"
+    elif sort_by == "z-a":
+        base_query += " ORDER BY name DESC"
+    else:
+        base_query += " ORDER BY id DESC"  # default: newest
+
+    conn = sqlite3.connect("guestbook.db")
+    cursor = conn.cursor()
+    cursor.execute(base_query, params)
+    entries = cursor.fetchall()
+    conn.close()
+
+    return render_template("guestbook.html", entries=entries, search_query=search_query, sort_by=sort_by)
+
+@app.route("/download-guestbook")
+def download_guestbook():
+    conn = sqlite3.connect("guestbook.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT name, message, timestamp FROM entries ORDER BY id DESC")
+    entries = cursor.fetchall()
+    conn.close()
+
+    si = io.StringIO()
+    writer = csv.writer(si)
+    writer.writerow(["Name", "Message", "Timestamp"])
+    writer.writerows(entries)
+    si.seek(0)
+
+    return send_file(
+        io.BytesIO(si.getvalue().encode("utf-8")),
+        mimetype="text/csv",
+        as_attachment=True,
+        download_name="guestbook_entries.csv"
+    )
+
+@app.route("/delete-entry/<int:entry_id>", methods=["POST"])
+def delete_entry(entry_id):
+    conn = sqlite3.connect("guestbook.db")
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM entries WHERE id = ?", (entry_id,))
+    conn.commit()
+    conn.close()
+    return redirect(url_for('guestbook'))
+
+@app.route("/delete-all-guestbook", methods=["POST"])
+def delete_all_guestbook():
+    conn = sqlite3.connect("guestbook.db")
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM entries")
+    conn.commit()
+    conn.close()
+    return redirect(url_for("guestbook"))
 
 @app.route("/data-dashboard", methods=["GET", "POST"])
 def data_dashboard():
@@ -165,4 +274,5 @@ def elements():
     return render_template('elements.html')
 
 if __name__ == '__main__':
+    init_guestbook()
     app.run(debug=True)

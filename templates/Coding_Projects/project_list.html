@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Changing Form - Coding Projects</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../static/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../static/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="/" class="title">Changing Form</a>
+				<nav>
+					<ul>
+						<li><a href="/" class="active">Home</a></li>
+						<li><a href="{{url_for('renders')}}" class="active">3D Renderings</a></li>
+						<li><a href="{{url_for('two_d_plans')}}" class="active">2D Plans</a></li>
+						<li><a href="{{url_for('project_list')}}">Coding Projects</a></li>
+						<li><a href="{{url_for('resume')}}" class="active">Resume</a></li>
+						<li><a href="http://github.com/Juniordecoy" class="active">GitHub</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Coding Projects</h1>
+							<p>
+								Below you’ll find a handful of small-scale projects I’ve been building to sharpen my skills
+								with Python, Pandas, and SQL. Each one reflects real-world utility — from data dashboards
+								to backend logic. If you’ve got a project idea of your own, feel free to reach out or check
+								out my GitHub for more. Thanks for stopping by.
+							</p>
+						</div>
+
+					</section>
+
+				    <div class="project-section" style="text-align: center; margin-bottom: 3rem;">
+					  <h2>🌤️ Weather Logbook</h2>
+					  <div>
+						  <img src="../static/images/Guestbook.PNG" alt="Data Dashboard Preview"
+						   style="max-width: 100%; height: auto; margin: 1rem 0;" />
+					  </div>
+					  <a href="{{ url_for('weather_log') }}" class="button primary" style="margin-top: 1rem; margin-bottom: 3rem">
+						View Project
+					  </a>
+					</div>
+
+				    <div class="project-section" style="text-align: center; margin-bottom: 3rem;">
+					  <h2>📖 Guestbook</h2>
+					  <div>
+						  <img src="../static/images/Guestbook.PNG" alt="Data Dashboard Preview"
+						   style="max-width: 100%; height: auto; margin: 1rem 0;" />
+					  </div>
+					  <a href="{{ url_for('guestbook') }}" class="button primary" style="margin-top: 1rem; margin-bottom: 3rem">
+						View Project
+					  </a>
+					</div>
+
+					<div class="project-section" style="text-align: center; margin-bottom: 3rem;">
+					  <h2>📊 Data Dashboard</h2>
+					  <div>
+						  <img src="../static/images/Data_Insights.PNG" alt="Data Dashboard Preview"
+						   style="max-width: 100%; height: auto; margin: 1rem 0;" />
+					  </div>
+					  <a href="{{ url_for('data_dashboard') }}" class="button primary" style="margin-top: 1rem; margin-bottom: 3rem">
+						View Project
+					  </a>
+					</div>
+
+					<div class="project-section" style="text-align: center; margin-bottom: 3rem;">
+					  <h2>⏱️ Time Tracker</h2>
+					  <div>
+						  <img src="../static/images/Time_Tracker.PNG" alt="Data Dashboard Preview"
+						   style="max-width: 100%; height: auto; margin: 1rem 0;" />
+					  </div>
+					  <a href="{{ url_for('time_tracker') }}" class="button primary" style="margin-top: 1rem; margin-bottom: 3rem">
+						View Project
+					  </a>
+					</div>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Changing Form.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a> & E. Junior Rodriguez</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="../static/assets/js/jquery.min.js"></script>
+			<script src="../static/assets/js/jquery.scrollex.min.js"></script>
+			<script src="../static/assets/js/jquery.scrolly.min.js"></script>
+			<script src="../static/assets/js/browser.min.js"></script>
+			<script src="../static/assets/js/breakpoints.min.js"></script>
+			<script src="../static/assets/js/util.js"></script>
+			<script src="../static/assets/js/main.js"></script>
+
+	</body>
+</html>
