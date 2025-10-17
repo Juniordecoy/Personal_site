@@ -23,8 +23,63 @@ a:hover{text-decoration:underline}
 .flash.success{background:#1b4a2e}
 .flash.error{background:#5b1e1e}
 
-/* footer */
-.site-footer{border-top:1px solid #1c2128; color:var(--muted)}
+/* --- Footer --- */
+.site-footer{
+  border-top: 1px solid #1c2128;
+  background: #0b0d10;     /* keep your dark tone */
+  color: var(--muted);
+  text-align: center;      /* centers the text */
+  padding: 24px 0;
+}
+.site-footer a{
+  color: #8ab4f8;          /* soft blue link (optional) */
+  text-decoration: none;
+}
+.site-footer a:hover{
+  text-decoration: underline;
+}
+
+/* ---------------- HERO SECTION ---------------- */
+.hero{
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  /* background: url("/static/images/hero_bg.JPG") center/cover no-repeat; */
+}
+.hero h1{
+  font-size: clamp(32px, 6vw, 64px);
+  margin:0 0 .25em;
+}
+.hero p{
+  font-size: clamp(16px, 2.4vw, 22px);
+  opacity:.95;
+  margin:0 0 1em;
+}
+.hero__overlay{
+  position:relative;
+  padding: clamp(24px, 6vw, 64px);
+}
+.hero::after{
+  content:"";
+  position:absolute; inset:0;
+  background:rgba(0,0,0,0.35);
+}
+.hero-video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-1;
+  filter:brightness(0.7);
+}
+.hero .btn{
+  position: relative; z-index: 2;
+}
 
 /* ---------------- CONTACT FORM POLISH ---------------- */
 .form-card{
@@ -168,4 +223,65 @@ a:hover{text-decoration:underline}
 .fade-in.is-visible{
   opacity: 1;
   transform: none;
+}
+
+/* --- Home: service cards --- */
+.services-cards{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 28px;
+}
+.services-cards .card{
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 22px 22px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.25);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.services-cards .card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.3);
+}
+.services-cards h2{
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+  color: var(--ink);
+}
+.services-cards ul{
+  margin: 0 0 14px;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.services-cards .btn{
+  display:inline-block;
+}
+@media (max-width: 520px){
+  .wrap{ padding: 18px; } /* a touch tighter on small screens */
+}
+
+/* --- Light content area --- */
+.light-section{
+  background:#e6e8eb;        /* soft light gray */
+  color:#111;                /* dark text for contrast */
+  padding:60px 0;            /* breathing space */
+}
+
+/* --- Home: final headline block --- */
+.home-cta{
+  text-align:center;
+  padding:60px 0 80px;
+}
+.home-cta h1{
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 12px;
+}
+.home-cta p{
+  margin-bottom: 22px;
+  color: #333;
+  font-size: 1.05rem;
+}
+.home-cta .btn{
+  display:inline-block;
 }
