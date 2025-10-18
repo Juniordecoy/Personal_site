@@ -408,7 +408,7 @@ a:hover{text-decoration:underline}
   .nav{
     width: 100%;
     display: flex;
-    justify-content: right;
+    justify-content: center;
     gap: 12px;
     flex-wrap: wrap;
   }
@@ -422,6 +422,63 @@ a:hover{text-decoration:underline}
   .hero h1{ font-size: clamp(28px, 9vw, 40px); }
   .hero p{ font-size: clamp(14px, 3.6vw, 18px); }
   .hero .btn{ padding: 10px 14px; }
+}
+
+@media (max-width: 640px) {
+  .site-header .wrap {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;                 /* space between logo and nav */
+  }
+
+  .logo {
+    justify-content: center;   /* centers logo + text combo */
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .nav a {
+    margin: 0;
+  }
+}
+
+/* --- Align nav items vertically in header --- */
+.nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 8px 12px;
+}
+
+.nav .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 10px 18px; /* adjust if you want it exactly level */
+  margin-top: 0;
+}
+
+/* Work cards: keep images from stretching on phones */
+.work-wrap .gallery-item picture{
+  display:block;
+  aspect-ratio: 16 / 9;   /* consistent frame */
+  overflow:hidden;
+  border-radius:12px 12px 0 0;
+}
+
+.work-wrap .gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit: cover;       /* fill without distortion */
+  display:block;
 }
 
 #lightbox-overlay[hidden]{display:none !important;}
