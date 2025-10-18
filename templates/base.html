@@ -34,13 +34,16 @@
 <body>
   <header class="site-header">
     <div class="wrap">
-      <a class="logo" href="/">Changing Form</a>
+      <a class="logo" href="/">
+        <img src="{{ url_for('static', filename='icons/cf_logo.png') }}" alt="Changing Form logo">
+        <span>Changing Form</span>
+      </a>
       <nav class="nav">
         <!-- Using plain anchors for now to avoid touching Python routes yet -->
         <a href="/">Home</a>
         <a href="/services">Services</a>
         <a href="/work">Work</a>
-        <a href="#">About</a>
+        <!-- <a href="#">About</a> -->
         <a class="btn" href="/contact">Contact</a>
       </nav>
     </div>
@@ -68,11 +71,17 @@
 
   <!-- We'll add /static/js/site.js later -->
   <div id="lightbox-overlay" hidden style="position:fixed;inset:0;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;z-index:9999;">
-  <button id="lightbox-close" aria-label="Close" style="position:absolute;top:14px;right:18px;background:transparent;border:0;color:white;font-size:28px;cursor:pointer;">×</button>
-  <figure style="max-width:min(92vw,1200px);max-height:88vh;margin:0;padding:0;display:flex;flex-direction:column;align-items:center;">
-    <img id="lightbox-img" alt="" style="max-width:100%;max-height:80vh;border-radius:12px;display:block;" />
-    <figcaption id="lightbox-caption" style="color:#ccd3db;margin-top:10px;text-align:center;font-size:.95rem;"></figcaption>
-  </figure>
+    <button id="lightbox-close" aria-label="Close" style="position:absolute;top:14px;right:18px;background:transparent;border:0;color:white;font-size:28px;cursor:pointer;">×</button>
+
+    <!-- NEW: prev / next -->
+    <button id="lightbox-prev" aria-label="Previous">‹</button>
+    <button id="lightbox-next" aria-label="Next">›</button>
+
+    <figure style="max-width:min(92vw,1200px);max-height:88vh;margin:0;padding:0;display:flex;flex-direction:column;align-items:center;">
+      <img id="lightbox-img" alt="" style="max-width:100%;max-height:80vh;border-radius:12px;display:block;" />
+      <figcaption id="lightbox-caption" style="color:#ccd3db;margin-top:10px;text-align:center;font-size:.95rem;"></figcaption>
+    </figure>
   </div>
+
 </body>
 </html>

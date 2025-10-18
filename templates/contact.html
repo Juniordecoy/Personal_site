@@ -4,25 +4,27 @@
 {% block meta_desc %}Get in touch with Changing Form for 3D rendering, 2D plans, and drone media in Central PA.{% endblock %}
 
 {% block content %}
-<section class="wrap">
-  <h1>Let’s talk about your project</h1>
-  <p>Fill out the form and we’ll reply within one business day.</p>
+<section class="light-section light-contact">
+  <section class="wrap contact-wrap">
+    <h1>Let’s talk about your project</h1>
+    <p>Fill out the form and we’ll reply within one business day.</p>
 
-  <form method="post" class="form-card">
-    {{ form.csrf_token }}
-    <label>Name</label>
-    {{ form.name(size=40) }}
-    {% for e in form.name.errors %}<small class="error">{{ e }}</small>{% endfor %}
+    <form method="post" class="form-card">
+      {{ form.csrf_token }}
+      <label>Name</label>
+      {{ form.name(size=40) }}
+      {% for e in form.name.errors %}<small class="error">{{ e }}</small>{% endfor %}
 
-    <label>Email</label>
-    {{ form.email(size=40) }}
-    {% for e in form.email.errors %}<small class="error">{{ e }}</small>{% endfor %}
+      <label>Email</label>
+      {{ form.email(size=40) }}
+      {% for e in form.email.errors %}<small class="error">{{ e }}</small>{% endfor %}
 
-    <label>Message</label>
-    {{ form.message(rows=6, cols=60) }}
-    {% for e in form.message.errors %}<small class="error">{{ e }}</small>{% endfor %}
+      <label>Message</label>
+      {{ form.message(rows=6, cols=60) }}
+      {% for e in form.message.errors %}<small class="error">{{ e }}</small>{% endfor %}
 
-    <button type="submit" class="btn">Send Message</button>
-  </form>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
 </section>
 {% endblock %}
