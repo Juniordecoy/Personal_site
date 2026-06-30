@@ -1,0 +1,33 @@
+{
+  "enabled": false,
+  "provider": "gmail_api",
+  "mode": "read_only",
+  "max_messages_per_scan": 10,
+
+  "allowed_actions": [
+    "read_headers",
+    "read_body",
+    "classify_email",
+    "create_event",
+    "create_task",
+    "create_review_item"
+  ],
+
+  "blocked_actions": [
+    "send_email",
+    "delete_email",
+    "archive_email",
+    "mark_spam",
+    "mark_read"
+  ],
+
+  "classification_targets": [
+    "lead",
+    "client",
+    "vendor",
+    "internal",
+    "spam",
+    "task",
+    "unknown"
+  ]
+}

@@ -1,0 +1,853 @@
+:root{
+  --bg:#0b0d10; --card:#12151a; --ink:#e9eef3; --muted:#a9b4c0; --brand:#6c63ff; --brand-ink:#fff;
+  --radius:14px; --gap:16px; --max:1100px;
+  --font: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--font); line-height:1.6}
+.wrap{max-width:var(--max); margin:auto; padding:24px}
+a{color:var(--brand); text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* header */
+.site-header{background:rgba(255,255,255,0.02); border-bottom:1px solid #1c2128}
+.site-header .wrap{display:flex; align-items:center; justify-content:space-between}
+.logo{font-weight:700; color:var(--ink); letter-spacing:.3px}
+.nav a{color:var(--muted); margin-left:18px}
+.nav .btn{background:var(--brand); color:var(--brand-ink); padding:10px 14px; border-radius:999px}
+.nav .btn:hover{text-decoration:none; filter:brightness(1.1)}
+
+/* --- Header logo combo --- */
+.logo{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-weight:700;
+  color:#fff;
+  text-decoration:none;
+}
+.logo img{
+  height:30px;          /* tweak as needed */
+  width:auto;
+  vertical-align:middle;
+}
+
+/* main + flashes */
+.flash-stack{display:grid; gap:10px; margin:16px 0}
+.flash{padding:10px 12px; border-radius:10px; background:#21314a}
+.flash.success{background:#1b4a2e}
+.flash.error{background:#5b1e1e}
+
+/* --- Footer --- */
+.site-footer{
+  border-top: 1px solid #1c2128;
+  background: #0b0d10;     /* keep your dark tone */
+  color: var(--muted);
+  text-align: center;      /* centers the text */
+  padding: 24px 0;
+}
+.site-footer a{
+  color: #8ab4f8;          /* soft blue link (optional) */
+  text-decoration: none;
+}
+.site-footer a:hover{
+  text-decoration: underline;
+}
+
+/* ---------------- HERO SECTION ---------------- */
+.hero{
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  /* background: url("/static/images/hero_bg.JPG") center/cover no-repeat; */
+}
+.hero h1{
+  font-size: clamp(32px, 6vw, 64px);
+  margin:0 0 .25em;
+  color: #ffffff;           /* pure white */
+  text-shadow: 0 2px 6px rgba(0,0,0,0.45); /* soft contrast glow */
+}
+.hero h1,
+.hero p {
+  position: relative;
+  z-index: 2;   /* lift text above the dark overlay */
+}
+.hero p{
+  font-size: clamp(16px, 2.4vw, 22px);
+  opacity:.95;
+  margin:0 0 1em;
+}
+.hero__overlay{
+  position:relative;
+  padding: clamp(24px, 6vw, 64px);
+}
+.hero::after{
+  content:"";
+  position:absolute; inset:0;
+  background:rgba(0,0,0,0.35);
+}
+.hero-video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-1;
+  filter:brightness(0.7);
+}
+.hero .btn{
+  position: relative; z-index: 2;
+}
+
+/* --- Home: service cards --- */
+.services-cards{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 28px;
+}
+.services-cards .card{
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 22px 22px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.25);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.services-cards .card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.3);
+}
+.services-cards h2{
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+  color: var(--ink);
+}
+.services-cards ul{
+  margin: 0 0 14px;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.services-cards .btn{
+  display:inline-block;
+}
+@media (max-width: 520px){
+  .wrap{ padding: 18px; } /* a touch tighter on small screens */
+}
+
+.services-cards .card p{
+  text-align:center;
+}
+
+/* --- Home: final headline block --- */
+.home-cta{
+  text-align:center;
+  padding:60px 0 80px;
+}
+.home-cta h1{
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 12px;
+}
+.home-cta p{
+  margin-bottom: 22px;
+  color: #333;
+  font-size: 1.05rem;
+}
+.home-cta .btn{
+  display:inline-block;
+}
+
+.home-cta-photo-real{
+  background:#91AEC1;
+  border-radius:16px;
+  padding:60px 40px;
+  margin:40px auto;
+}
+
+.home-cta-backend{
+  background:#B796AC;
+  border-radius:16px;
+  padding:60px 40px;
+  margin:40px auto;
+}
+
+/* ---------------- SERVICES PAGE ---------------- */
+.service-section {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin: 28px 0;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  transition: transform 0.15s ease;
+}
+
+.service-section:hover {
+  transform: translateY(-3px);
+}
+
+.service-section h2 {
+  color: var(--brand);
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.service-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.8;
+}
+
+.service-section li::before {
+  content: "• ";
+  color: var(--brand);
+  font-weight: bold;
+}
+
+.service-section li.blank::before {
+  content: "";
+}
+
+
+@media (min-width: 800px) {
+  .service-section {
+    padding: 32px 40px;
+  }
+  }
+
+/* ---------------- WORK PAGE ---------------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;        /* adds padding space between cards */
+  margin-top: 24px; /* optional, separates from intro text */
+}
+
+.gallery-item {
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+}
+
+.gallery-item p {
+  padding: 12px 16px;
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+  text-align: center;
+  }
+
+/* ---------------- CONTACT FORM POLISH ---------------- */
+.form-card{
+  background:var(--card);
+  padding:28px;
+  border-radius:var(--radius);
+  display:grid;
+  gap:16px;
+  box-shadow:0 4px 20px rgba(0,0,0,.3);
+  margin-top:24px;
+  margin-bottom:60px;
+}
+
+.form-card label{
+  font-weight:600;
+  font-size:0.95rem;
+  color:var(--ink);
+}
+
+.form-card input,
+.form-card textarea{
+  width:100%;
+  background:#0e1217;
+  border:1px solid #1f2630;
+  color:var(--ink);
+  padding:12px 14px;
+  border-radius:10px;
+  font-size:1rem;
+  resize:vertical;
+}
+
+.form-card input:focus,
+.form-card textarea:focus{
+  border-color:var(--brand);
+  outline:none;
+  box-shadow:0 0 0 1px var(--brand);
+}
+
+.error{
+  color:#ff7b7b;
+  font-size:0.85rem;
+}
+
+.btn{
+  background:var(--brand);
+  color:var(--brand-ink);
+  padding:12px 20px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+  transition:background .2s;
+}
+.btn:hover{filter:brightness(1.1)}
+
+/* ---- image fade-in ---- */
+.fade-in{
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .4s ease, transform .4s ease;
+}
+.fade-in.is-visible{
+  opacity: 1;
+  transform: none;
+}
+
+
+/* --- Light content area --- */
+.light-section{
+  background:#e6e8eb;        /* soft light gray */
+  color:#111;                /* dark text for contrast */
+  padding:60px 0;            /* breathing space */
+}
+
+/* --- Services page light shell --- */
+.light-services{
+  background:#e6e8eb;      /* same light tone as home */
+  padding:24px 0 60px;     /* less top padding than home */
+  color:#111;              /* default text for this area */
+}
+.light-services .services-wrap h1{
+  color:#111;              /* black heading (your #2) */
+  margin-top:0;
+}
+.light-services .services-wrap > p{
+  color:#333;              /* readable paragraph on light bg */
+}
+
+/* Keep service cards dark with white text (your #3) */
+.light-services .service-section{
+  background: var(--card);
+  color: var(--ink);
+}
+
+/* --- Work page light shell --- */
+.light-work{
+  background:#e6e8eb;
+  padding:24px 0 60px;
+  color:#111;
+}
+.light-work .work-wrap h1{
+  color:#111;
+  margin-top:0;
+}
+.light-work .work-wrap > p{
+  color:#333;
+}
+
+/* Keep gallery cards dark */
+.light-work .gallery-item{
+  background: var(--card);
+  color: var(--ink);
+}
+
+/* Work page: space between stacked cards */
+.work-wrap .gallery-item + .gallery-item{
+  margin-top: 30px;   /* adjust to taste */
+}
+
+/* --- Contact page light shell --- */
+.light-contact{
+  background:#e6e8eb;
+  padding:24px 0 60px;
+  color:#111;
+}
+.light-contact .contact-wrap h1{
+  color:#111;
+  margin-top:0;
+}
+.light-contact .contact-wrap > p{
+  color:#333;
+}
+
+/* keep the form card dark */
+.light-contact .form-card{
+  background: var(--card);
+  color: var(--ink);
+}
+
+/* Fix arrow position inside lightbox */
+#lightbox-prev,
+#lightbox-next {
+  position: fixed;             /* fixes them relative to the screen */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10000;              /* ensure above overlay */
+  width: 44px;                 /* taller, easier click */
+  height: 64px;                /* added height */
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+#lightbox-prev { left: 32px; }
+#lightbox-next { right: 32px; }
+
+#lightbox-prev:hover,
+#lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+@media (max-width: 640px){
+  .site-header .wrap{
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 16px; /* tighter header padding */
+  }
+  .logo img{ height:24px; }
+  .nav{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .nav a{ margin: 0; }        /* remove left margins */
+  .nav .btn{ padding: 8px 12px; }
+}
+
+@media (max-width: 640px){
+  .hero{ min-height: 58vh; }
+  .hero__overlay{ padding: 28px 16px; }
+  .hero h1{ font-size: clamp(28px, 9vw, 40px); }
+  .hero p{ font-size: clamp(14px, 3.6vw, 18px); }
+  .hero .btn{ padding: 10px 14px; }
+}
+
+@media (max-width: 640px) {
+  .site-header .wrap {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;                 /* space between logo and nav */
+  }
+
+  .logo {
+    justify-content: center;   /* centers logo + text combo */
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .nav a {
+    margin: 0;
+  }
+}
+
+/* --- Align nav items vertically in header --- */
+.nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 8px 12px;
+}
+
+.nav .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 10px 18px; /* adjust if you want it exactly level */
+  margin-top: 0;
+}
+
+/* Work cards: keep images from stretching on phones */
+.work-wrap .gallery-item picture{
+  display:block;
+  aspect-ratio: 16 / 9;   /* consistent frame */
+  overflow:hidden;
+  border-radius:12px 12px 0 0;
+}
+
+.work-wrap .gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit: cover;       /* fill without distortion */
+  display:block;
+}
+
+#lightbox-overlay[hidden]{display:none !important;}
+
+.hidden{ display:none; }
+
+/* --- Login Page --- */
+.login-wrap{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:60vh;
+}
+
+.login-card{
+  width:100%;
+  max-width:420px;
+  background:var(--card);
+  color:var(--ink);
+  padding:32px;
+  border-radius:var(--radius);
+  box-shadow:0 4px 18px rgba(0,0,0,.25);
+  text-align:center;
+}
+
+.login-card p{
+  color:var(--muted);
+  margin-bottom:24px;
+}
+
+.login-form{
+  display:grid;
+  gap:14px;
+  text-align:left;
+}
+
+.login-form label{
+  font-weight:600;
+}
+
+.login-form input{
+  width:100%;
+  background:#0e1217;
+  border:1px solid #1f2630;
+  color:var(--ink);
+  padding:12px 14px;
+  border-radius:10px;
+  font-size:1rem;
+}
+
+.login-form input:focus{
+  border-color:var(--brand);
+  outline:none;
+  box-shadow:0 0 0 1px var(--brand);
+}
+
+.login-form .btn{
+  margin-top:8px;
+}
+
+.site-header .wrap {
+    max-width: none;
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* --- agent cards --- */
+.ai-control-shell {
+    display: flex;
+    min-height: 70vh;
+}
+
+.ai-sidebar {
+    width: 280px;
+    padding: 20px;
+    background: #303841;
+}
+
+.ai-workspace {
+    flex: 1;
+    padding: 30px;
+    background: #F5EEDC;
+}
+
+.ai-agent-card {
+    margin-bottom: 14px;
+    padding: 12px;
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.45);
+}
+
+.ai-agent-card-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.ai-agent-card p {
+    margin: 6px 0;
+    font-size: 13px;
+}
+
+.ai-review-strip {
+    margin-top: 24px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.16);
+}
+
+.ai-review-strip strong {
+    display: block;
+    margin-bottom: 8px;
+}
+
+
+.agent-status-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 8px;
+    border-radius: 50%;
+}
+
+.status-online {
+    background: #4CAF50;
+}
+
+.status-idle {
+    background: #FFC107;
+}
+
+.status-planned {
+    background: #757575;
+}
+
+.status-offline {
+    background: #F44336;
+}
+
+.agent-status-badge {
+    padding: 2px 2px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.agent-status-badge.status-online {
+    background: rgba(76, 175, 80, 0.40);
+    color: #81C784;
+}
+
+.agent-status-badge.status-idle {
+    background: rgba(255, 193, 7, 0.40);
+    color: #FFD54F;
+}
+
+.agent-status-badge.status-planned {
+    background: rgba(117, 117, 117, 0.40);
+    color: #BDBDBD;
+}
+
+.agent-status-badge.status-offline {
+    background: rgba(244, 67, 54, 0.40);
+    color: #EF9A9A;
+}
+
+/* --- master room layout --- */
+.operations-room-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 24px;
+}
+
+.room-station {
+    min-height: 140px;
+    padding: 18px;
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 14px;
+    background: rgba(255,255,255,0.04);
+}
+
+.room-station h3 {
+    margin-top: 0;
+}
+
+.ai-room-canvas {
+    position: relative;
+    min-height: 750px;
+
+    background-image: url("/static/images/control_center_bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.agent-room {
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+    color: white;
+}
+
+.operations-room {
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-image: url("/static/images/agent_room_bgs/room_placeholder_001.png");
+}
+
+.operations-console {
+    top: 50%;
+    left: 46%;
+}
+
+.operations-board {
+    top: 39%;
+    left: 10%;
+}
+
+.task-dispatch {
+    bottom: 10%;
+    left: 12%;
+}
+
+.approval-desk {
+    bottom: 10%;
+    right: 14%;
+}
+
+.email-room {
+    top: 40px;
+    left: 18%;
+
+    background-image: url("/static/images/agent_room_bgs/room_placeholder_002.png");
+}
+
+.communications-department {
+    top: 50%;
+    left: 46%;
+}
+
+.inbox-monitor {
+    top: 39%;
+    left: 10%;
+}
+
+.message-classifier {
+    bottom: 10%;
+    left: 12%;
+}
+
+.priority-queue {
+    bottom: 10%;
+    right: 14%;
+}
+
+.draft-desk {
+    top: 40px;
+    left: 80%;
+}
+
+.map-room {
+    position: absolute;
+    min-width: auto;
+    min-height: auto;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.25);
+}
+
+.map-room span {
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.agent-token {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: yellow;
+    border: 2px solid black;
+}
+
+.agent-token span {
+    position: absolute;
+    top: 26px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+.location-home {
+    top: 20%;
+    left: 50%;
+}
+
+.location-event_board {
+    top: 42%;
+    left: 14%;
+}
+
+.location-task_queue {
+    top: 86%;
+    left: 16%;
+}
+
+.location-approval_terminal {
+    top: 86%;
+    left: 82%;
+}
+
+.location-master_core {
+    top: 53%;
+    left: 49%;
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "id": "create_room",
+    "name": "Create Room",
+    "owner_agent": "room_builder_agent",
+    "status": "planned",
+    "requires_approval": true,
+    "description": "Creates a new visual room entry for the control center."
+  },
+  {
+    "id": "scan_site_code",
+    "name": "Scan Site Code",
+    "owner_agent": "code_review_agent",
+    "status": "planned",
+    "requires_approval": false,
+    "description": "Reviews website code and reports issues without making changes."
+  }
+]

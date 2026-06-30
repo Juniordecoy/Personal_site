@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Changing Form Freelancing</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../static/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../static/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Welcome</a></li>
+							<li><a href="#one">Who we are</a></li>
+							<li><a href="#two">What we do</a></li>
+							<li><a href="#three">Get in touch</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1>Changing Form</h1>
+							<p>Helping shape vision into Reality.</p>
+							<ul class="actions">
+								<li><a href="#one" class="button scrolly">Learn more</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- One -->
+					<section id="one" class="wrapper style2 spotlights">
+						<section>
+							<a href="#" class="image"><img src="../static/images/v029.png" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>3D Renderings from 2D Plans</h2>
+									<p>Bring your designs to life with high-quality 3D renderings based on your 2D floor plans, measurements, and photos. Whether it's for real estate, renovation planning, or presentation purposes, I’ll transform your inputs into realistic visuals that clearly communicate your vision.</p>
+									<ul class="actions">
+										<li><a href="{{url_for('renders')}}" class="button">Learn more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<div class="inner">
+									<h2>2D Floor Plans from Sketches or Specs</h2>
+									<p>Need a clean, professional 2D plan of a room or an entire floor? Send over your hand-drawn sketches, measurements, and photos, and I’ll turn them into accurate digital floor plans. Ideal for renovations, furniture planning, or real estate listings. Please note: full-house plans are not offered at this time.</p>
+									<ul class="actions">
+										<li><a href="{{url_for('under_construction')}}" class="button">Learn more</a></li>
+									</ul>
+								</div>
+							</div>
+							<a href="#" class="image"><img src="../static/images/Floor_plan.png" alt="" data-position="top center" /></a>
+						</section>
+						<section>
+							<a href="#" class="image"><img src="../static/images/timer_py_code.png" alt="" data-position="25% 25%" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Small-Scale Web & App Development</h2>
+									<p>Need help building a lightweight web or app project? I support small-scale development using Python and popular libraries like Pandas, NumPy, and more. Whether it’s data handling, automation, or basic backend logic, I can help bring your idea to life. I also offer beginner-level SQL support for simple database operations</p>
+									<ul class="actions">
+										<li><a href="{{url_for('under_construction')}}" class="button">Learn more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+					</section>
+
+				<!-- Two -->
+					<section id="two" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>What we do</h2>
+							<p>At Changing Form, I offer creative and technical services that turn ideas into clear, visual, and functional results. From transforming floor plans into striking 3D renderings, to drafting accurate 2D layouts, to assisting with small-scale development projects—my goal is to support your vision with practical, detail-oriented solutions. Whether you're a real estate professional, renovator, or someone building a digital tool, I’m here to help bring your project to life.</p>
+							<div class="features">
+								<section>
+									<span class="icon solid major fa-desktop"></span>
+									<h3>Provide visuals for planning furniture, renovations, or listings</h3>
+								</section>
+								<section>
+									<span class="icon major fa-gem"></span>
+									<h3>Create realistic 3D visualizations from 2D plans and photos</h3>
+								</section>
+								<section>
+									<span class="icon solid major fa-cog"></span>
+									<h3>Digitize hand-drawn room layouts into clean 2D floor plans</h3>
+								</section>
+								<section>
+									<span class="icon solid major fa-code"></span>
+									<h3>Build basic web tools or dashboards using Python</h3>
+								</section>
+								<section>
+									<span class="icon solid major fa-lock"></span>
+									<h3>Assist with beginner-level SQL queries and database setup</h3>
+								</section>
+								<section>
+									<span class="icon solid major fa-link"></span>
+									<h3>Help organize and analyze data with Pandas and NumPy</h3>
+								</section>
+
+							</div>
+							<ul class="actions">
+								<li><a href="{{url_for('under_construction')}}" class="button">Learn more</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- Three -->
+					<section id="three" class="wrapper style4 fade-up">
+						<div class="inner">
+							<h2>Get in touch</h2>
+							<p>Have a project in mind or a question about how I can help? Reach out any time—I'm happy to discuss the details, provide a quote, or just explore ideas with you.</p>
+							<div class="split style1">
+								<section>
+									<form method="post" action="/">
+										<div class="fields">
+											<div class="field half">
+												<label for="name">Name</label>
+												<input type="text" name="name" id="name" />
+											</div>
+											<div class="field half">
+												<label for="email">Email</label>
+												<input type="text" name="email" id="email" />
+											</div>
+											<div class="field">
+												<label for="message">Message</label>
+												<textarea name="message" id="message" rows="5"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><a href="/" class="button submit">Send Message</a></li>
+										</ul>
+									</form>
+								</section>
+								<section>
+									<ul class="contact">
+										<li>
+											<h3>Address</h3>
+											<span>
+<!--										12345 Somewhere Road #654<br />-->
+											Camp hill, PA 17011<br />
+											USA</span>
+										</li>
+										<li>
+											<h3>Email</h3>
+											<span>Junior@changingform.com</span>
+										</li>
+										<li>
+											<h3>Phone</h3>
+											<span>(717) 578-3290</span>
+										</li>
+										<li>
+											<h3>Social</h3>
+											<ul class="icons">
+<!--												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>-->
+												<li><a href="{{url_for('under_construction')}}" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+												<li><a href="{{url_for('under_construction')}}" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+												<li><a href="{{url_for('under_construction')}}" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+<!--												<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>-->
+											</ul>
+										</li>
+									</ul>
+								</section>
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Changing Form.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a> & E. Junior Rodriguez</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="../static/assets/js/jquery.min.js"></script>
+			<script src="../static/assets/js/jquery.scrollex.min.js"></script>
+			<script src="../static/assets/js/jquery.scrolly.min.js"></script>
+			<script src="../static/assets/js/browser.min.js"></script>
+			<script src="../static/assets/js/breakpoints.min.js"></script>
+			<script src="../static/assets/js/util.js"></script>
+			<script src="../static/assets/js/main.js"></script>
+
+	</body>
+</html>

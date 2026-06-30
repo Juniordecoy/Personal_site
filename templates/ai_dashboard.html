@@ -1,0 +1,108 @@
+{% extends "base2.html" %}
+
+{% block title %}AI Dashboard{% endblock %}
+
+{% block content %}
+<section class="ai-control-shell">
+
+  <aside class="ai-sidebar">
+    {% for agent in agents %}
+      <div class="ai-agent-card">
+        <div class="ai-agent-card-header">
+          <strong>
+            <span class="agent-status-dot status-{{ agent.status }}"></span>
+            {{ agent.name }}
+          </strong>
+
+          <span class="agent-status-badge status-{{ agent.status }}">
+              {{ agent.status }}
+          </span>
+        </div>
+
+        {% if agent.id in agent_locations %}
+          <p><strong>Activity:</strong> {{ agent_locations[agent.id].current_activity }}</p>
+          <p><strong>Tool:</strong> {{ agent_locations[agent.id].current_tool }}</p>
+        {% else %}
+          <p><strong>Activity:</strong> Not active yet</p>
+          <p><strong>Tool:</strong> None</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+
+    <section class="ai-tool-summary">
+      <strong>Tools</strong>
+      <span>{{ available_tools|length }} known tools</span>
+    </section>
+
+    <section class="ai-review-strip">
+      <strong>Review Queue</strong>
+
+      {% if review_queue %}
+        {% for item in review_queue %}
+          <div class="review-item">
+            <span>{{ item.title }}</span>
+          </div>
+        {% endfor %}
+      {% else %}
+        <span>No approvals waiting.</span>
+      {% endif %}
+    </section>
+  </aside>
+
+  <main class="ai-workspace">
+    <section class="ai-room-canvas">
+      <div class="agent-room operations-room">
+        <div class="agent-token master-agent-token location-{{ agent_locations.master_agent.current_location }}">
+          <span>Master Agent</span>
+        </div>
+
+        <div class="map-room operations-console">
+          <span>Operations Console</span>
+        </div>
+
+        <div class="map-room operations-board">
+          <span>Operations Board</span>
+        </div>
+
+        <div class="map-room task-dispatch">
+          <span>Task Dispatch</span>
+        </div>
+
+        <div class="map-room approval-desk">
+          <span>Approval Desk</span>
+        </div>
+      </div>
+
+      <div class="agent-room email-room">
+        <div class="agent-token email-agent-token location-{{ agent_locations.email_agent.current_location }}">
+          <span>Email Agent</span>
+        </div>
+
+        <div class="map-room communications-department">
+          <span>Communications Department</span>
+        </div>
+
+        <div class="map-room inbox-monitor">
+          <span>Inbox Monitor</span>
+        </div>
+
+        <div class="map-room message-classifier">
+          <span>Message Classifier</span>
+        </div>
+
+        <div class="map-room priority-queue">
+          <span>Priority Queue</span>
+        </div>
+
+        <div class="map-room draft-desk">
+          <span>Draft Desk</span>
+        </div>
+      </div>
+
+
+    </section>
+
+  </main>
+
+</section>
+{% endblock %}

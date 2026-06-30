@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}Changing Form — 3D, Plans, Drone{% endblock %}</title>
+  <meta name="description" content="{% block meta_desc %}Photo-real 3D renders, 2D plans, and drone media for contractors in Central PA.{% endblock %}">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Changing Form">
+  <meta property="og:title" content="{% block og_title %}Changing Form — 3D Renders, Plans, Drone{% endblock %}">
+  <meta property="og:description" content="{% block og_desc %}Photo-real 3D visuals, accurate 2D plans, and drone media for contractors and homeowners in Central PA.{% endblock %}">
+  <meta property="og:image" content="{{ url_for('static', filename='img/og.jpg') }}">
+  <meta property="og:url" content="{{ request.url_root.rstrip('/') }}">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% block tw_title %}Changing Form — 3D Renders, Plans, Drone{% endblock %}">
+  <meta name="twitter:description" content="{% block tw_desc %}Photo-real 3D visuals, accurate 2D plans, and drone media for contractors and homeowners in Central PA.{% endblock %}">
+  <meta name="twitter:image" content="{{ url_for('static', filename='img/og.jpg') }}">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='icons/favicon.ico') }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='icons/favicon-32x32.png') }}">
+  <link rel="apple-touch-icon" sizes="192x192" href="{{ url_for('static', filename='icons/favicon-192x192.png') }}">
+  <link rel="apple-touch-icon" sizes="512x512" href="{{ url_for('static', filename='icons/favicon-512x512.png') }}">
+  <link rel="manifest" href="{{ url_for('static', filename='icons/site.webmanifest') }}">
+  <meta name="theme-color" content="#0b0d10">
+
+  <link rel="stylesheet" href="/static/css/site.css" />
+  <script defer src="/static/js/site.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="/">
+        <img src="{{ url_for('static', filename='icons/cf_logo.png') }}" alt="Changing Form logo">
+        <span>Changing Form</span>
+      </a>
+      <nav class="nav">
+        <!-- Using plain anchors for now to avoid touching Python routes yet -->
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/work">Work</a>
+        <!-- <a href="#">About</a> -->
+        <a class="btn" href="/contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-stack">
+          {% for category, msg in messages %}
+            <div class="flash {{ category }}">{{ msg }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+  </main>
+{% block content %}{% endblock %}
+</body>
+</html>

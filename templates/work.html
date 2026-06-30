@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block title %}Our Work — Changing Form{% endblock %}
+{% block meta_desc %}See examples of Changing Form’s 3D renderings, photography, and video work for real clients.{% endblock %}
+
+{% block content %}
+<section class="light-section light-work">
+  <section class="wrap work-wrap">
+    <h1>Our Work</h1>
+    <p>A glimpse at recent 3D renders, photography, and video projects from around Central PA.</p>
+    <div class="gallery-item">
+      <!-- Visible thumbnail -->
+      <a href="/static/images/3D_renders/Backside_view_v1.webp"
+         data-lightbox
+         data-group="reno3d"
+         data-alt="Home Renovation — 3D Renders (Backside view)">
+        <picture>
+          <source srcset="/static/images/3D_renders/Backside_view_v1.webp" type="image/webp">
+          <img class="fade-in"
+               src="/static/images/3D_renders/Backside_view_v1.webp"
+               alt="Home Renovation — 3D Renders"
+               width="1200" height="800"
+               loading="lazy" />
+        </picture>
+      </a>
+      <!-- Extra images in the SAME group (hidden links) -->
+      <a href="/static/images/3D_renders/Backside_view_v2.webp" data-lightbox data-group="reno3d" data-alt="Backside view v2" class="hidden"></a>
+      <a href="/static/images/3D_renders/basement_edit_006b.webp" data-lightbox data-group="reno3d" data-alt="basement remodel" class="hidden"></a>
+      <a href="/static/images/3D_renders/Bathroom_001.webp" data-lightbox data-group="reno3d" data-alt="Bathroom 001" class="hidden"></a>
+      <a href="/static/images/3D_renders/Bathroom_004b.webp" data-lightbox data-group="reno3d" data-alt="Bathroom 002" class="hidden"></a>
+      <a href="/static/images/3D_renders/bedroom_03.webp" data-lightbox data-group="reno3d" data-alt="Bedroom 001" class="hidden"></a>
+      <a href="/static/images/3D_renders/bedroom_top-down.webp" data-lightbox data-group="reno3d" data-alt="Bedroom 002" class="hidden"></a>
+      <a href="/static/images/3D_renders/deck_v07.webp" data-lightbox data-group="reno3d" data-alt="Raised Deck" class="hidden"></a>
+      <a href="/static/images/3D_renders/IMG_0636.webp" data-lightbox data-group="reno3d" data-alt="Backyard Kitchen" class="hidden"></a>
+      <a href="/static/images/3D_renders/kitchen_011.webp" data-lightbox data-group="reno3d" data-alt="Basement Remodel 001" class="hidden"></a>
+      <a href="/static/images/3D_renders/livingroom_003.webp" data-lightbox data-group="reno3d" data-alt="Basement Remodel 002" class="hidden"></a>
+      <a href="/static/images/3D_renders/Main_room_002.webp" data-lightbox data-group="reno3d" data-alt="Basement Remodel 003" class="hidden"></a>
+      <a href="/static/images/3D_renders/patio_002.webp" data-lightbox data-group="reno3d" data-alt="Backyard Patio" class="hidden"></a>
+      <a href="/static/images/3D_renders/v011_lights off.webp" data-lightbox data-group="reno3d" data-alt="Bathroom 003" class="hidden"></a>
+
+      <p>Home Renovation — 3D Renders</p>
+    </div>
+
+    <div class="gallery-item">
+      <!-- Visible thumbnail -->
+      <a href="/static/images/photos/dji_fly_20230914.webp"
+         data-lightbox
+         data-group="photography"
+         data-alt="Exterior Drone Shot — Top Down">
+        <picture>
+          <source srcset="/static/images/photos/dji_fly_20230914.webp" type="image/webp">
+          <img class="fade-in"
+               src="/static/images/photos/dji_fly_20230914.webp"
+               alt="Exterior Drone Shot — Top Down"
+               width="1200" height="800"
+               loading="lazy" />
+        </picture>
+      </a>
+      <!-- Extra images in SAME group -->
+      <a href="/static/images/photos/backyard_002.webp" data-lightbox data-group="photography" data-alt="Backyard — phase 2" class="hidden"></a>
+      <a href="/static/images/photos/backyard_003.webp" data-lightbox data-group="photography" data-alt="Backyard — phase 3" class="hidden"></a>
+      <a href="/static/images/photos/backyard_004.webp" data-lightbox data-group="photography" data-alt="Backyard — phase 4" class="hidden"></a>
+      <a href="/static/images/photos/basement_001.webp" data-lightbox data-group="photography" data-alt="Basement 1 — before" class="hidden"></a>
+      <a href="/static/images/photos/basement_002.webp" data-lightbox data-group="photography" data-alt="Basement 1 — after" class="hidden"></a>
+      <a href="/static/images/photos/house_001.webp" data-lightbox data-group="photography" data-alt="House Foundation" class="hidden"></a>
+      <a href="/static/images/photos/house_002.webp" data-lightbox data-group="photography" data-alt="House during construction" class="hidden"></a>
+      <a href="/static/images/photos/basement_003.webp" data-lightbox data-group="photography" data-alt="Basement 2 — before" class="hidden"></a>
+      <a href="/static/images/photos/basement_004.webp" data-lightbox data-group="photography" data-alt="Basement 2 — during construction" class="hidden"></a>
+
+      <p>Work Site Photography</p>
+    </div>
+
+    <div class="gallery-item">
+      <a href="/static/images/2D_visuals/kitchen_012-measurements.webp"
+         data-lightbox
+         data-group="vis2d"
+         data-alt="2D Floor Plan Visualization">
+        <picture>
+          <source srcset="/static/images/2D_visuals/kitchen_012-measurements.webp" type="image/webp">
+          <img class="fade-in"
+               src="/static/images/2D_visuals/kitchen_012-measurements.webp"
+               alt="2D Floor Plan Visualization"
+               width="1200" height="800"
+               loading="lazy" />
+        </picture>
+      </a>
+      <!-- Extra images in SAME group -->
+      <a href="/static/images/2D_visuals/1n2_floor_plan.webp" data-lightbox data-group="vis2d" data-alt="2D Floor Plan Visualization — 2" class="hidden"></a>
+      <a href="/static/images/2D_visuals/2D_001b.webp" data-lightbox data-group="vis2d" data-alt="Basement 2D Floor Plan — 1" class="hidden"></a>
+      <a href="/static/images/2D_visuals/2d_plan.webp" data-lightbox data-group="vis2d" data-alt="Basement 2D Floor Plan — 2" class="hidden"></a>
+      <a href="/static/images/2D_visuals/bathroom_010.webp" data-lightbox data-group="vis2d" data-alt="Bathroom 2D Floor Plan — 1" class="hidden"></a>
+      <a href="/static/images/2D_visuals/patio_007.webp" data-lightbox data-group="vis2d" data-alt="Backyard 2D Visuals — 1" class="hidden"></a>
+      <a href="/static/images/2D_visuals/top-down_002-b.webp" data-lightbox data-group="vis2d" data-alt="Bathroom 2D Floor Plan — 2" class="hidden"></a>
+      <a href="/static/images/2D_visuals/TopDown_02-b.webp" data-lightbox data-group="vis2d" data-alt="Basement 2D Floor Plan — 3" class="hidden"></a>
+      <a href="/static/images/2D_visuals/v026.webp" data-lightbox data-group="vis2d" data-alt="Bathroom 2D Floor Plan — 3" class="hidden"></a>
+
+      <p>2D Floor Plan Visualization</p>
+    </div>
+
+    <div class="gallery-item">
+      <a href="/static/images/video_editing_thumb.webp" data-lightbox data-alt="Video Creation & Editing">
+        <picture>
+          <source srcset="/static/images/video_editing_thumb.webp" type="image/webp">
+          <img class="fade-in"
+               src="/static/images/video_editing_thumb.webp"
+               alt="Video Creation & Editing"
+               width="1200" height="800"
+               loading="lazy" />
+        </picture>
+      </a>
+      <p>Video Creation & Editing — Storytelling visuals</p>
+    </div>
+
+  </section>
+</section>
+{% endblock %}

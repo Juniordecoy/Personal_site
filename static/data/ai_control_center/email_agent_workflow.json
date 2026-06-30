@@ -1,0 +1,30 @@
+{
+  "current_phase": "setup",
+  "steps": [
+    {
+      "id": "gmail_api_setup",
+      "name": "Gmail API Setup",
+      "status": "not_started"
+    },
+    {
+      "id": "read_only_connection",
+      "name": "Read-only Gmail Connection",
+      "status": "not_started"
+    },
+    {
+      "id": "scan_recent_messages",
+      "name": "Scan Recent Messages",
+      "status": "not_started"
+    },
+    {
+      "id": "classify_messages",
+      "name": "Classify Messages",
+      "status": "not_started"
+    },
+    {
+      "id": "create_master_events",
+      "name": "Create Master Events",
+      "status": "not_started"
+    }
+  ]
+}

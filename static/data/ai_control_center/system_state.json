@@ -1,0 +1,12 @@
+{
+  "system_name": "Changing Form AI",
+  "status": "online",
+  "mode": "manual_approval",
+
+  "active_tasks": 0,
+  "pending_reviews": 0,
+  "alerts": 0,
+  "events": 0,
+
+  "last_update": "system_start"
+}

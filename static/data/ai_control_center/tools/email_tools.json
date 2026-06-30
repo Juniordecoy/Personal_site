@@ -1,0 +1,23 @@
+[
+  {
+    "id": "check_inbox",
+    "name": "Check Inbox",
+    "status": "planned",
+    "requires_approval": false,
+    "description": "Checks Gmail for new unread messages."
+  },
+  {
+    "id": "classify_email",
+    "name": "Classify Email",
+    "status": "planned",
+    "requires_approval": false,
+    "description": "Determines the category and importance of an email."
+  },
+  {
+    "id": "create_master_event",
+    "name": "Create Master Event",
+    "status": "planned",
+    "requires_approval": false,
+    "description": "Creates an event for the Master Agent when an email requires attention."
+  }
+]

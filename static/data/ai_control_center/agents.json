@@ -1,0 +1,32 @@
+[
+  {
+    "id": "master_agent",
+    "name": "Master Agent",
+    "room_name": "Command Room",
+    "role": "System conductor and operations manager",
+    "status": "online",
+    "current_task_id": null,
+    "last_seen": "manual_start",
+    "notes": "First core agent. Tracks system activity and coordinates future agents."
+  },
+  {
+    "id": "email_agent",
+    "name": "Email Agent",
+    "room_name": "Inbox Room",
+    "role": "Monitors and classifies business emails",
+    "status": "planned",
+    "current_task_id": null,
+    "last_seen": null,
+    "notes": "Future agent for reading, summarizing, and preparing email actions for approval."
+  },
+  {
+    "id": "ui_builder_agent",
+    "name": "UI Builder Agent",
+    "room_name": "Design Bay",
+    "role": "Future dashboard and room builder",
+    "status": "planned",
+    "current_task_id": null,
+    "last_seen": null,
+    "notes": "Not active yet. Will eventually help create rooms, widgets, and visual components."
+  }
+]

@@ -1,0 +1,9 @@
+[
+  {
+    "id": "task_001",
+    "title": "Review AI Dashboard Layout",
+    "assigned_agent": "master_agent",
+    "tool": "scan_site_code",
+    "status": "queued"
+  }
+]

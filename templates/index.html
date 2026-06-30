@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Changing Form — 3D Renders, Plans, Drone{% endblock %}
+{% block meta_desc %}Photo-real 3D visuals, accurate 2D plans, and drone media for contractors and homeowners in Central PA.{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="/static/images/clouds.mp4" type="video/mp4">
+  </video>
+  <div class="hero__overlay">
+    <h1>Changing Form</h1>
+    <p>3D Renderings • Work Site Photography • Video Creation</p>
+    <a class="btn" href="/contact">Get a free quote</a>
+  </div>
+</section>
+<section class="light-section">
+  <section class="wrap services-cards">
+    <article class="card">
+      <h2>3D Renders & 2D Plans</h2>
+      <ul>
+        <li>Photo-real 3D stills</li>
+        <li>Room/whole-floor layouts</li>
+        <li>Accurate 2D floor plans</li>
+      </ul>
+      <p><a class="btn" href="{{ url_for('services') }}">See services</a></p>
+    </article>
+
+    <article class="card">
+      <h2>Drone & Construction Photos</h2>
+      <ul>
+        <li>Exterior aerial shots</li>
+        <li>Before / during progress</li>
+        <li>Monthly site visits</li>
+      </ul>
+      <p><a class="btn" href="{{ url_for('work') }}">View gallery</a></p>
+    </article>
+
+    <article class="card">
+      <h2>Video & Editing</h2>
+      <ul>
+        <li>Live filming on site</li>
+        <li>1-min social cuts</li>
+        <li>3D fly-throughs</li>
+      </ul>
+      <p><a class="btn" href="{{ url_for('contact') }}">Get a quote</a></p>
+    </article>
+
+  </section>
+
+  <section class="wrap home-cta home-cta-photo-real">
+    <h1>Photo-real 3D & 2D plans for builders</h1>
+    <p>Win approvals faster with clean renders, accurate 2D plans, and drone media.</p>
+    <a class="btn btn-primary" href="{{ url_for('contact') }}">Get a quote</a>
+  </section>
+
+  <section class="wrap home-cta home-cta-backend">
+    <h1>Changing Form Backend</h1>
+    <a class="btn btn-primary" href="{{ url_for('login') }}">Login</a>
+  </section>
+</section>
+{% endblock %}

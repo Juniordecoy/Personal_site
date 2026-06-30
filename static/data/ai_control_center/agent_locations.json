@@ -1,0 +1,15 @@
+{
+  "master_agent": {
+    "status": "idle",
+    "current_location": "home",
+    "current_activity": "Waiting for work",
+    "current_tool": "None"
+  },
+
+  "email_agent": {
+    "status": "planned",
+    "current_location": "home",
+    "current_activity": "Offline",
+    "current_tool": "None"
+  }
+}
